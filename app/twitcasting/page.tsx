@@ -8,6 +8,7 @@ export default async function Home() {
   const { data, error } = await supabase
     .from("twitcasting")
     .select("*")
+    .order("tw_published_at", { ascending: false })
     .returns<Twitcasting[]>();
 
 
@@ -15,7 +16,7 @@ export default async function Home() {
     <div>
       <div className="mb-8">
         <h1 className="text-3xl font-extrabold tracking-tight">Twitcast</h1>
-        <p className="mt-2 text-muted">twitcastingにライブ配信アーカイブ一覧</p>
+        <p className="mt-2 text-muted">twitcasライブ配信アーカイブ一覧</p>
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

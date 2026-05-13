@@ -8,6 +8,7 @@ export default async function Home() {
   const { data, error } = await supabase
     .from("youtube")
     .select("*")
+    .order("published_at", { ascending: false })
     .returns<Youtube[]>();
 
 
