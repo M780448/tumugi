@@ -3,7 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import Weather from "./weather/Weather"
 import "./globals.css";
-import { GoogleAnalytics } from '@next/third-parties/google'
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,45 +29,48 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
-        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
         {/* Header */}
         <header className="sticky top-0 z-50 border-b border-card-border bg-card/80 backdrop-blur-md">
-          <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
+          <nav className="mx-auto flex max-w-5xl flex-col gap-3 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
             <Link
-              href="/"
-              className="text-xl font-bold tracking-tight text-foreground transition-colors hover:text-accent"
+            href="/"
+            className="text-center text-xl font-bold tracking-tight text-foreground transition-colors hover:text-accent sm:text-left"
             >
-              つむぎのお部屋
+              つむぎ
             </Link>
-            <ul className="flex items-center gap-1">
-              <li>
-                <Link
-                  href="/"
-                  className="rounded-lg px-4 py-2 text-sm font-medium text-muted transition-colors hover:bg-accent-bg hover:text-accent"
-                >
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/youtube"
-                  className="rounded-lg px-4 py-2 text-sm font-medium text-muted transition-colors hover:bg-accent-bg hover:text-accent"
-                >
-                  Youtube
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/twitcasting"
-                  className="rounded-lg px-4 py-2 text-sm font-medium text-muted transition-colors hover:bg-accent-bg hover:text-accent"
-                >
-                  twitcasting
-                </Link>
-              </li>
-              <li>
-                <Weather />
-              </li>
-            </ul>
+ 
+           <ul className="flex flex-wrap items-center justify-center gap-1">
+             <li>
+               <Link
+               href="/"
+               className="rounded-lg px-3 py-2 text-sm font-medium text-muted transition-colors hover:bg-accent-bg hover:text-accent"
+               >
+                 Home
+               </Link>
+             </li>
+
+             <li>
+               <Link
+                 href="/youtube"
+                 className="rounded-lg px-3 py-2 text-sm font-medium text-muted transition-colors hover:bg-accent-bg hover:text-accent"
+               >
+                 YouTube
+               </Link>
+             </li>
+
+             <li>
+               <Link
+               href="/twitcasting"
+               className="rounded-lg px-3 py-2 text-sm font-medium text-muted transition-colors hover:bg-accent-bg hover:text-accent"
+               >
+                twitcas
+               </Link>
+             </li>
+
+            <li className="ml-2">
+              <Weather />
+            </li>
+           </ul>
           </nav>
         </header>
 
