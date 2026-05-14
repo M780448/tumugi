@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "つむぎ",
-  description: "つむぎ",
+  title: "つむぎのお部屋",
+  description: "つむぎのお部屋",
 };
 
 export default function RootLayout({
@@ -36,7 +36,7 @@ export default function RootLayout({
             href="/"
             className="text-center text-xl font-bold tracking-tight text-foreground transition-colors hover:text-accent sm:text-left"
             >
-              つむぎ
+              つむぎのお家
             </Link>
  
            <ul className="flex flex-wrap items-center justify-center gap-1">
@@ -87,7 +87,7 @@ export default function RootLayout({
                 <Link
                   href="https://x.com/mu_oooo_"
                   target="_blank"
-                  className="rounded-lg px-4 py-2 text-sm font-medium text-muted transition-colors hover:bg-accent-bg hover:text-accent"
+                  className="rounded-lg px-2 py-2 text-xs font-medium text-muted transition-colors hover:bg-accent-bg hover:text-accent sm:px-4 sm:text-sm"
                 >
                   Twitter
                 </Link>
@@ -96,7 +96,7 @@ export default function RootLayout({
                 <Link
                   href="https://www.threads.com/@mugyu15?igshid=NTc4MTIwNjQ2YQ%3D%3D"
                   target="_blank"
-                  className="rounded-lg px-4 py-2 text-sm font-medium text-muted transition-colors hover:bg-accent-bg hover:text-accent"
+                  className="rounded-lg px-2 py-2 text-xs font-medium text-muted transition-colors hover:bg-accent-bg hover:text-accent sm:px-4 sm:text-sm"
                 >
                   threads
                 </Link>
@@ -105,7 +105,7 @@ export default function RootLayout({
                 <Link
                   href="https://www.instagram.com/mugyu15?igsh=ejkzODZ5dXZjcjFj&utm_source=qr"
                   target="_blank"
-                  className="rounded-lg px-4 py-2 text-sm font-medium text-muted transition-colors hover:bg-accent-bg hover:text-accent"
+                  className="rounded-lg px-2 py-2 text-xs font-medium text-muted transition-colors hover:bg-accent-bg hover:text-accent sm:px-4 sm:text-sm"
                 >
                   instagram
                 </Link>
@@ -114,14 +114,23 @@ export default function RootLayout({
                 <Link
                   href="https://fantia.jp/fanclubs/59114"
                   target="_blank"
-                  className="rounded-lg px-4 py-2 text-sm font-medium text-muted transition-colors hover:bg-accent-bg hover:text-accent"
+                  className="rounded-lg px-2 py-2 text-xs font-medium text-muted transition-colors hover:bg-accent-bg hover:text-accent sm:px-4 sm:text-sm"
                 >
                   Fantia
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="https://tsumugyu.booth.pm/"
+                  target="_blank"
+                  className="rounded-lg px-2 py-2 text-xs font-medium text-muted transition-colors hover:bg-accent-bg hover:text-accent sm:px-4 sm:text-sm"
+                >
+                  Booth
+                </Link>
+              </li>
             </ul>
           <div className="mt-4 text-center text-xs text-muted/60">
-            © {new Date().getFullYear()} Tech Blog.
+            © {new Date().getFullYear()} つむぎのお部屋.
           </div>
           </div>
         </footer>

@@ -28,7 +28,7 @@ export default async function Home() {
               rel="noopener noreferrer"
               className="group rounded-xl border border-card-border bg-card transition-all overflow-hidden hover:border-qiita-green hover:shadow-lg"
             >
-              <div className="relative h-40 w-full overflow-hidden">
+              <div className="relative aspect-video w-full overflow-hidden">
                 <Image 
                 src={post.tw_thumbnail_url} 
                 alt={post.tw_title}
