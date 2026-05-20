@@ -1,5 +1,6 @@
 import { supabase } from "./utils/supabase";
 import { Youtube, Twitcasting } from "@/domain/Article";
+import Divination from './divination/divination';
 import Image from "next/image";
 import Link from "next/link";
 import { Suspense } from "react";
@@ -113,6 +114,27 @@ export default async function Home() {
           >
             メンバーシップはこちら
           </a>
+        </div>
+      </section>
+
+　　　<section className="rounded-2xl border border-purple-100 bg-purple-50 px-5 py-4">
+        <div className="flex items-center justify-between">
+          <div>
+            <h2 className="text-sm font-semibold">
+              🔮 今日の地理運気
+            </h2>
+
+            <p className="mt-2 text-sm text-muted">
+              今いる場所から、今日の空気を診断します
+            </p>
+          </div>
+
+          <Link
+          href="/divination"
+          className="rounded-xl bg-white px-4 py-2 text-sm font-medium shadow-sm transition hover:shadow"
+          >
+            診断する
+          </Link>
         </div>
       </section>
 
