@@ -1,6 +1,5 @@
 import { supabase } from "./utils/supabase";
 import { Youtube, Twitcasting } from "@/domain/Article";
-import Divination from './divination/divination';
 import Image from "next/image";
 import Link from "next/link";
 import { Suspense } from "react";

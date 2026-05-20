@@ -36,7 +36,7 @@ export default function RootLayout({
             href="/"
             className="text-center text-xl font-bold tracking-tight text-foreground transition-colors hover:text-accent sm:text-left"
             >
-              つむぎのお家
+              つむぎのお部屋
             </Link>
  
            <ul className="flex flex-wrap items-center justify-center gap-1">
