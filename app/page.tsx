@@ -116,24 +116,32 @@ export default async function Home() {
         </div>
       </section>
 
-　　　<section className="rounded-2xl border border-purple-100 bg-purple-50 px-5 py-4">
-        <div className="flex items-center justify-between">
-          <div>
-            <h2 className="text-sm font-semibold">
-              🔮 今日の地理運気
-            </h2>
+      <section className="rounded-2xl border border-purple-100 bg-purple-50 px-5 py-4">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+    
+        <div>
+           <h2 className="text-sm font-semibold">
+          🌼 今日のラッキーフラワー
+           </h2>
 
-            <p className="mt-2 text-sm text-muted">
-              今いる場所から、今日の空気を診断します
-            </p>
-          </div>
+           <p className="mt-2 text-sm text-muted">
+           今日のあなたに寄り添う花を見つけます
+           </p>
+         </div>
 
-          <Link
-          href="/divination"
-          className="rounded-xl bg-white px-4 py-2 text-sm font-medium shadow-sm transition hover:shadow"
-          >
-            診断する
-          </Link>
+         <Link
+         href="/divination"
+         className="
+         flex items-center justify-center
+         rounded-xl bg-white px-4 py-2
+         text-sm font-medium
+         shadow-sm transition hover:shadow
+         whitespace-nowrap
+         "
+         >
+         診断する
+         </Link>
+    
         </div>
       </section>
 
