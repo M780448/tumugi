@@ -22,6 +22,7 @@ type Result = {
 
 export default function Divination() {
   const [result, setResult] = useState<Result | null>(null);
+  const [locationDenied, setLocationDenied] = useState(false);
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
@@ -50,13 +51,28 @@ export default function Divination() {
         const divData = await divRes.json();
 
         setResult(divData);
+      },
+
+      // ↓ 拒否時
+      () => {
+        setLocationDenied(true);
       }
     );
   }, []);
 
+  // 位置情報拒否
+  if (locationDenied) {
+    return (
+      <div className="text-sm text-red-500">
+        位置情報が許可されていません
+      </div>
+    );
+  }
+
+  // ローディング
   if (!result) {
     return (
-      <div className="rounded-2xl border border-purple-100 bg-purple-50 p-5">
+      <div className="rounded-2xl border border-purple-100 bg-purple-50 p-5 text-center">
         診断中...
       </div>
     );
@@ -67,10 +83,10 @@ export default function Divination() {
       <div className="mx-auto max-w-md">
         <div className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl shadow-md">
           <Image
-          src={result.flower.image}
-          alt={result.flower.name}
-          fill
-          className="object-cover"
+            src={result.flower.image}
+            alt={result.flower.name}
+            fill
+            className="object-cover"
           />
         </div>
 
