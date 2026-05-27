@@ -3,7 +3,7 @@ import { Youtube, Twitcasting } from "@/domain/Article";
 import Image from "next/image";
 import Link from "next/link";
 import { Suspense } from "react";
-
+import Recommendation from "./recommendation/Recommendation"
 
 async function YoutubeArticles() {
   const { data, error } = await supabase
@@ -113,6 +113,11 @@ export default async function Home() {
           >
             メンバーシップはこちら
           </a>
+
+          <div className="mt-2 text-sm text-muted">
+            <p>おすすめ動画</p>
+            <Recommendation />
+          </div>
         </div>
       </section>
 
