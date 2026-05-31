@@ -115,7 +115,7 @@ export default async function Home() {
           </a>
 
           <div className="mt-2 text-sm text-muted">
-            <p>おすすめ動画</p>
+            <p>今の空気に似合うおすすめ動画</p>
             <Recommendation />
           </div>
         </div>
@@ -126,11 +126,11 @@ export default async function Home() {
     
         <div>
            <h2 className="text-sm font-semibold">
-          🌼 今日のラッキーフラワー
+          🌼 今日の花
            </h2>
 
            <p className="mt-2 text-sm text-muted">
-           今日のあなたに寄り添う花を見つけます
+           今の空気に似合う花をお届けします
            </p>
          </div>
 
