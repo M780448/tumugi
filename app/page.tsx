@@ -100,7 +100,7 @@ export default async function Home() {
 
         <div className="text-sm leading-5 text-gray-700">
           <p className="mb-3">
-            Twitcasメンバーシップ配信：10日 / 24日
+            Twitcasメンバーシップ配信：
           </p>
 
           <p className="mb-0">
@@ -144,7 +144,7 @@ export default async function Home() {
          whitespace-nowrap
          "
          >
-         診断する
+         表示する
          </Link>
     
         </div>
