@@ -84,6 +84,12 @@ export default function Weather() {
     return (
       <div className="text-sm text-red-500">
         位置情報が許可されていません
+        <p className="mt-3 text-xs text-muted-foreground">
+          スマートフォン本体の位置情報をONにし、アドレスバー左側のアイコンから
+          位置情報を「許可」に変更できます。
+          <br />
+          Safariの場合は「ぁあ」→「Webサイトの設定」→「位置情報」
+        </p>
       </div>
     );
   }
