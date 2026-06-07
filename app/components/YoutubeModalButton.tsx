@@ -9,7 +9,7 @@ const YouTube = dynamic(
 );
 
 type Props = {
-  videoUrl?: string; // 💡 undefinedを許容する安全設計に変更
+  videoUrl?: string;
 };
 
 export default function YoutubeModalButton({
@@ -31,12 +31,12 @@ export default function YoutubeModalButton({
     return (id && id.length === 11) ? id : null;
   };
 
-  // 💡 【重要】サーバーサイド実行時にデータが無くても、ここで早期リターンしてエラーを防ぐ
+
   if (!videoUrl) {
     return null; 
   }
 
-  // 💡 【修正点】消えていた変数定義を追加（handleOpenやJSXより上に記述する必要があります）
+
   const videoId = getYoutubeId(videoUrl);
 
   const handleOpen = () => {
@@ -49,7 +49,7 @@ export default function YoutubeModalButton({
     <>
       <button
         onClick={handleOpen}
-        onTouchStart={handleOpen} // スマホの誤作動防止
+        onTouchStart={handleOpen} 
         className="
         mt-3 flex w-full items-center justify-center gap-2
         rounded-lg border border-red-400/40

@@ -1,6 +1,7 @@
 import { supabase } from "../utils/supabase";
 import { Youtube } from "@/domain/Article";
 import YoutubeModalButton from "@/app/components/YoutubeModalButton";
+import PlaylistModalButton from "@/app/components/PlaylistModalButton";
 import Image from "next/image";
 import SearchForm from "./SearchForm";
 
@@ -24,6 +25,14 @@ export default async function Home({ searchParams }: Props) {
       </div> 
 
       <SearchForm initialKeyword={keyword} />
+
+      <PlaylistModalButton
+        videoUrls={
+          data?.map(
+            (item) => item.video_url
+            ) ?? []
+        }
+      />
 
   <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
     {data?.map((post) => (
