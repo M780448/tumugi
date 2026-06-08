@@ -100,7 +100,7 @@ export default async function Home() {
 
         <div className="text-sm leading-5 text-gray-700">
           <p className="mb-3">
-            Twitcasメンバーシップ配信：
+            Twitcasメンバーシップ配信：14日 28日
           </p>
 
           <p className="mb-0">
