@@ -80,7 +80,7 @@ async function TwitcastingArticles() {
 }
 
 export default async function Home() {
-
+  const isAdmin = false;
   return (
     <div className="max-w-6xl mx-auto px-4 space-y-12">
       <section className="text-center">
@@ -113,42 +113,75 @@ export default async function Home() {
           >
             メンバーシップはこちら
           </a>
+                  
+          <div className="mt-2 flex items-center gap-2">
+            <p>お気に入り動画</p>
 
-          <div className="mt-2 text-sm text-muted">
-            <p>今の空気に似合うおすすめ動画</p>
-            <Recommendation />
+            {isAdmin && (
+              <a
+              href="/admin/favorite"
+              className="text-xs text-blue-500"
+              >
+                編集
+              </a>
+            )}
+          
           </div>
+
+          <Link
+          href="/favorite"
+          className="text-sm font-medium text-muted transition-colors hover:text-qiita-green"
+          >
+            
+          </Link>
+          <Recommendation />
         </div>
       </section>
 
-      <section className="rounded-2xl border border-purple-100 bg-purple-50 px-5 py-4">
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-    
-        <div>
-           <h2 className="text-sm font-semibold">
+<section className="rounded-2xl border border-purple-100 bg-purple-50 px-5 py-4">
+  <div className="flex flex-col gap-6">
+
+    <h2 className="text-sm font-semibold">
+      コンテンツ
+    </h2>
+
+    {/* 今日の花 */}
+    <div className="flex items-center justify-between gap-4">
+      <div>
+        <h2 className="text-sm font-semibold">
           🌼 今日の花
-           </h2>
+        </h2>
+        <p className="mt-1 text-sm text-muted">
+          今の空気に似合う花をお届けします
+        </p>
+      </div>
 
-           <p className="mt-2 text-sm text-muted">
-           今の空気に似合う花をお届けします
-           </p>
-         </div>
+      <Link
+        href="/divination"
+        className="flex items-center justify-center rounded-xl bg-white px-4 py-2 text-sm font-medium shadow-sm transition hover:shadow whitespace-nowrap"
+      >
+        表示する
+      </Link>
+    </div>
 
-         <Link
-         href="/divination"
-         className="
-         flex items-center justify-center
-         rounded-xl bg-white px-4 py-2
-         text-sm font-medium
-         shadow-sm transition hover:shadow
-         whitespace-nowrap
-         "
-         >
-         表示する
-         </Link>
-    
-        </div>
-      </section>
+    {/* お出かけ＆ボイス */}
+    <div className="flex items-center justify-between gap-4">
+      <div>
+        <h2 className="text-sm font-semibold">
+          癒しのお出かけ＆シチュエーションボイスを提案します
+        </h2>
+      </div>
+
+      <Link
+        href="/ai"
+        className="flex items-center justify-center rounded-xl bg-white px-4 py-2 text-sm font-medium shadow-sm transition hover:shadow whitespace-nowrap"
+      >
+        表示する
+      </Link>
+    </div>
+
+  </div>
+</section>
 
       <section>
         <div className="mb-4 flex items-center justify-between">

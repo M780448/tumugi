@@ -63,15 +63,15 @@ export async function POST(request: Request) {
 
     const asmrList = await search(category);
 
-    const random =
-      asmrList.length > 0
-        ? asmrList[Math.floor(Math.random() * asmrList.length)]
-        : null;
+    const randomAsmr =
+      asmrList
+        .sort(() => Math.random() - 0.5)
+        .slice(0, 3);
 
     return NextResponse.json({
       weather: data.current_weather,
       category,
-      asmr: random,
+      asmr: randomAsmr,
     });
 
   } catch (error: any) {

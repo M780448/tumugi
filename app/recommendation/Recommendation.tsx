@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import RecommendationPlaylistButton from "@/app/components/RecommendationPlaylistButton";
 
 type WeatherData = {
   temperature: number;
@@ -14,13 +15,9 @@ type AsmrData = {
 
 export default function Weather() {
   const [weather, setWeather] = useState<WeatherData | null>(null);
-
-  const [asmr, setAsmr] = useState<AsmrData | null>(null);
-
+  const [asmrs, setAsmrs] = useState<AsmrData[]>([]);
   const [category, setCategory] = useState('');
-
   const [loading, setLoading] = useState(true);
-
   const [locationDenied, setLocationDenied] = useState(false);
 
   useEffect(() => {
@@ -56,8 +53,7 @@ export default function Weather() {
             });
 
             setCategory(data.category);
-
-            setAsmr(data.asmr);
+            setAsmrs(data.asmr);
           }
         } catch (err) {
           console.error(err);
@@ -96,17 +92,32 @@ export default function Weather() {
 
   return (
     <div>
-      {asmr ? (
-        <a
-          href={asmr.video_url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:opacity-80 transition"
-        >
-          <p className="text-sm">
-            {asmr.title}
-          </p>
-        </a>
+      {asmrs.length > 0 ? (
+        <div className="space-y-0">
+          <div className="mb-2 flex items-center gap-2">
+            <p className="font-medium">
+              今の空気に似合うおすすめ動画
+            </p>
+
+            <RecommendationPlaylistButton
+              videoUrls={asmrs.map(video => video.video_url)}
+            />
+          </div>
+
+          {asmrs.map((video, index) => (
+            <a
+              key={index}
+              href={video.video_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block transition hover:text-purple-600"
+            >
+              <p className="text-sm">
+                {video.title}
+              </p>
+            </a>
+          ))}
+        </div>
       ) : (
         <p className="text-sm text-muted-foreground">
           おすすめ動画が見つかりませんでした
