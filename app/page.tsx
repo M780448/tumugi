@@ -115,7 +115,7 @@ export default async function Home() {
           </a>
                   
           <div className="mt-2 flex items-center gap-2">
-            <p>お気に入り動画</p>
+            <p></p>
 
             {isAdmin && (
               <a
