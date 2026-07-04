@@ -80,7 +80,7 @@ async function TwitcastingArticles() {
 }
 
 export default async function Home() {
-  const isAdmin = false;
+  const isAdmin = true;
   return (
     <div className="max-w-6xl mx-auto px-4 space-y-12">
       <section className="text-center">
@@ -100,7 +100,7 @@ export default async function Home() {
 
         <div className="text-sm leading-5 text-gray-700">
           <p className="mb-3">
-            Twitcasメンバーシップ配信：14日 28日
+            Twitcasメンバーシップ配信：5日 19日
           </p>
 
           <p className="mb-0">
@@ -115,7 +115,7 @@ export default async function Home() {
           </a>
                   
           <div className="mt-2 flex items-center gap-2">
-            <p></p>
+            <p>お気に入り</p>
 
             {isAdmin && (
               <a
@@ -132,7 +132,7 @@ export default async function Home() {
           href="/favorite"
           className="text-sm font-medium text-muted transition-colors hover:text-qiita-green"
           >
-            
+            表示
           </Link>
           <Recommendation />
         </div>
