@@ -122,7 +122,7 @@ export default async function Home() {
               href="/admin/favorite"
               className="text-xs text-blue-500"
               >
-                編集
+                
               </a>
             )}
           
@@ -132,7 +132,7 @@ export default async function Home() {
           href="/favorite"
           className="text-sm font-medium text-muted transition-colors hover:text-qiita-green"
           >
-            表示
+            
           </Link>
           <Recommendation />
         </div>
