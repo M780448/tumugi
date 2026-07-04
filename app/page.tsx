@@ -167,9 +167,9 @@ export default async function Home() {
     {/* お出かけ＆ボイス */}
     <div className="flex items-center justify-between gap-4">
       <div>
-        <h2 className="text-sm font-semibold">
+        <p className="mt-1 text-sm text-muted">
           癒しのお出かけ＆シチュエーションボイスを提案します
-        </h2>
+        </p>
       </div>
 
       <Link
